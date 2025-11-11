@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Monitor - System Logs</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Courier New', monospace;
+            background: #000;
+            color: #0f0;
+            padding: 10px;
+            font-size: 12px;
+        }
+        .header {
+            border-bottom: 1px solid #0f0;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+        .header h1 {
+            font-size: 16px;
+            font-weight: normal;
+        }
+        .stats {
+            margin-bottom: 10px;
+            padding: 5px 0;
+            border-bottom: 1px solid #333;
+        }
+        .stats span {
+            margin-right: 20px;
+        }
+        .status {
+            color: #ff0;
+        }
+        .logs {
+            height: calc(100vh - 150px);
+            overflow-y: auto;
+            border: 1px solid #333;
+            padding: 5px;
+            background: #000;
+        }
+        .log-line {
+            margin-bottom: 2px;
+            line-height: 1.4;
+        }
+        .timestamp {
+            color: #888;
+        }
+        .log-visit {
+            color: #0ff;
+        }
+        .log-click {
+            color: #ff0;
+        }
+        .log-scroll {
+            color: #f0f;
+        }
+        .log-error {
+            color: #f00;
+        }
+        .session-id {
+            color: #888;
+        }
+        .ip {
+            color: #0f0;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #111;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>TRAFFIC MONITOR v1.0 - UNIVERSAL LOG SYSTEM</h1>
+        <div class="stats">
+            <span>Connected: <span class="status" id="connected">0</span></span>
+            <span>Total Logs: <span class="status" id="totalLogs">0</span></span>
+            <span>Status: <span class="status" id="status">CONNECTING...</span></span>
+        </div>
+    </div>
+    
+    <div class="logs" id="logs">
+        <div class="log-line">[SYSTEM] Initializing traffic monitor...</div>
+        <div class="log-line">[SYSTEM] Connecting to server...</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
